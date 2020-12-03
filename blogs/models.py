@@ -10,6 +10,14 @@ BLOGS_STATUS = (
     (2,'Live'),
 )
 
+class BlogListingPage(models.Model):
+    metatitle = models.TextField(max_length=60,blank=False)
+    metadescription = models.TextField(max_length=200, blank=False)
+    metakeywords = models.TextField(max_length=256, blank=False)
+
+    def __str__(self):
+        return self.metatitle
+
 class BlogCategory(models.Model):
     postcategory = models.CharField(max_length=100, blank=False, unique=True)
 
@@ -27,10 +35,11 @@ class Blog(models.Model):
     link = models.SlugField(max_length=256,unique=True)
     blogimage = models.ImageField(upload_to='blogs/')
     title = models.CharField(max_length=256,unique=True)
-    selectcategory = models.ForeignKey(to=BlogCategory, on_delete = models.CASCADE)
+    category = models.ForeignKey(to=BlogCategory, on_delete = models.CASCADE)
     author = models.ForeignKey(to=Author,on_delete=models.CASCADE,default='Admin')
     description = models.TextField()
-    metta = models.TextField(max_length=256)
+    metadescription = models.TextField(max_length=256, blank=False)
+    metakeywords = models.TextField(max_length=256,default='')
     status = models.IntegerField(default=0,choices=BLOGS_STATUS)
     published = models.DateField()
     tags = TaggableManager()

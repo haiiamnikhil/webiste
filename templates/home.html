@@ -3,9 +3,11 @@
    <head>
       <meta charset="utf-8">
       <meta content="width=device-width, initial-scale=1.0" name="viewport">
-      <title>{{metatitle}}</title>
-      <meta content="" name="descriptison">
-      <meta content="" name="keywords">
+      {% for meta in metas %}
+      <title>{{meta.metatitle}}</title>
+      <meta content="{{meta.metadescription}}" name="descriptison">
+      <meta content="{{meta.metakeywords}}" name="keywords">
+      {% endfor %}
       <!-- Favicons -->
       {% load static %}
       <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
