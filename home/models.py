@@ -1,8 +1,10 @@
 from django.db import models
-from embed_video.fields import EmbedVideoField
+# from embed_video.fields import EmbedVideoField
 
-class Item(models.Model):
-    video = EmbedVideoField()  # same like models.URLField()
+class HomePage(models.Model):
+    metatitle = models.CharField(max_length=256,blank=False)
+    metadescription = models.TextField(max_length=256,blank=False)
+    metakeywords = models.CharField(max_length=256,blank=True,unique=False)
 
     def __str__(self):
-        return self.video
+        return self.metatitle

@@ -1,8 +1,8 @@
 from django.contrib import admin
 from embed_video.admin import AdminVideoMixin
-from .models import Item
+from .models import HomePage
 
-class MyModelAdmin(AdminVideoMixin, admin.ModelAdmin):
-    pass
+class MyModelAdmin(admin.ModelAdmin):
+    list_display = ('metatitle','metadescription','metakeywords')
 
-admin.site.register(Item, MyModelAdmin)
+admin.site.register(HomePage, MyModelAdmin)

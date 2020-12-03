@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .models import Item
+from .models import HomePage
 
 
-def HomePage(request):
-    video = Item.objects.all()
-    return render(request,'home.html',{'video':video})
+def home(request):
+    pagecontent = HomePage.objects.get()
+    return render(request,'home.html',context={'metatitle':pagecontent})

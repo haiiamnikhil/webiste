@@ -3,12 +3,11 @@
    <head>
       <meta charset="utf-8">
       <meta content="width=device-width, initial-scale=1.0" name="viewport">
-      <title>HashEngines</title>
+      <title>{{metatitle}}</title>
       <meta content="" name="descriptison">
       <meta content="" name="keywords">
       <!-- Favicons -->
       {% load static %}
-      {% load embed_video_tags %}
       <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
       <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
       <!-- Google Fonts -->
@@ -24,15 +23,9 @@
       <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
       <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
       <link rel="stylesheet" href="{% static 'assets/css/style.default.css'%}">
-      <!-- Template Main CSS File -->
       <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
       <link rel="stylesheet" href="{% static 'assets/css/video.css' %}">
-      <!-- =======================================================
-         * Template Name: Selecao - v2.2.0
-         * Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
-         * Author: BootstrapMade.com
-         * License: https://bootstrapmade.com/license/
-         ======================================================== -->
+
    </head>
    <body>
       <!-- ======= Header ======= -->
@@ -40,8 +33,6 @@
          <div class="container d-flex align-items-center">
             <div class="logo mr-auto">
                <h1 class="text-light"><a href="{% url 'home' %}"><img src="{% static 'assets/sitelogo/hashengines.png' %}" alt=""></a></h1>
-               <!-- Uncomment below if you prefer to use an image logo -->
-               <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
             <nav class="nav-menu d-none d-lg-block">
                <ul>
@@ -79,9 +70,10 @@
             <!-- .nav-menu -->
          </div>
       </header>
-      {% block content %}
       <!-- End Header -->
       <!-- ======= Hero Section ======= -->
+      <div class="body-content">
+         {% block content %}
       <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
          <div class='play-video'>
             <div class="overlay"></div>
@@ -89,7 +81,7 @@
                <source src="{% static 'assets/video/hashengines.mp4'%}" type="video/mp4">
             </video>
          </div>
-         </div>
+         
          <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
             <defs>
                <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
@@ -663,6 +655,7 @@
       <!-- End #main -->
       <!-- ======= Footer ======= -->
       {% endblock %}
+   </div>
       <footer id="footer">
          <div class="container">
             <h3>HashEngines</h3>
