@@ -4,8 +4,15 @@ from .views import *
 urlpatterns = [
     path('',Service,name='service'),
     path('digital-marketing',Digital_Marking,name='digital_marketing'),
-    path('graphics-design-and-multimedia',Graphics_Design,name='graphics_design'),
-    path('website-development-company',Development,name='websitedesignanddevelopment'),
-    path('wordpress-website-development',Website_Design_Development,name='website_design_development'),
+    path('graphics-design-and-multimedia',GraphicsDesignAndMultimedia,name='graphics_design'),
+    path('website-development-company',DesignAnd_Development,name='websitedesignanddevelopment'),
+    path('wordpress-website-development',WebsiteDesignand_Development,name='website_design_development'),
     path('mobile-app-development',Mobile_App,name='mobile_app'),
+    path('search-engine-optimization',SearchEngineOptimization,name='seo'),
+    path('social-media-optimization',SocialMediaOptimization,name='smo'),
+    path('email-marketing',EmailMarketing,name='emailmarketing'),
+    path('content-marketing',ContentMarketing,name='contentmarketing'),
+    path('pay-per-click-marketing',Mobile_App,name='ppcm'),
+    path('branding',Branding,name='branding'),
+
 ]

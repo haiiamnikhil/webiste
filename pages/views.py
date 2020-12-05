@@ -30,7 +30,7 @@ def DesignAnd_Development(request):
             'metas':DesignAndDevelopment.objects.all()
         })
 
-def WebsiteDesignandDevelopment(request):
+def WebsiteDesignand_Development(request):
     return render(
         request,'services/websitedesignanddevelopment.html',
         {
