@@ -50,6 +50,54 @@ class MobileAppDevelopment(models.Model):
     def __str__(self):
         return self.metatitle
 
+class SEO(models.Model):
+    metatitle = models.TextField(max_length=60,blank=False)
+    metadescription = models.TextField(max_length=250, blank=False)
+    metakeywords = models.TextField(max_length=256,blank=True)
+
+    def __str__(self):
+        return self.metatitle
+
+class SMO(models.Model):
+    metatitle = models.TextField(max_length=60,blank=False)
+    metadescription = models.TextField(max_length=250, blank=False)
+    metakeywords = models.TextField(max_length=256,blank=True)
+
+    def __str__(self):
+        return self.metatitle
+
+class EM(models.Model):
+    metatitle = models.TextField(max_length=60,blank=False)
+    metadescription = models.TextField(max_length=250, blank=False)
+    metakeywords = models.TextField(max_length=256,blank=True)
+
+    def __str__(self):
+        return self.metatitle
+
+class CM(models.Model):
+    metatitle = models.TextField(max_length=60,blank=False)
+    metadescription = models.TextField(max_length=250, blank=False)
+    metakeywords = models.TextField(max_length=256,blank=True)
+
+    def __str__(self):
+        return self.metatitle
+
+class PPCM(models.Model):
+    metatitle = models.TextField(max_length=60,blank=False)
+    metadescription = models.TextField(max_length=250, blank=False)
+    metakeywords = models.TextField(max_length=256,blank=True)
+
+    def __str__(self):
+        return self.metatitle
+
+class Branding(models.Model):
+    metatitle = models.TextField(max_length=60,blank=False)
+    metadescription = models.TextField(max_length=250, blank=False)
+    metakeywords = models.TextField(max_length=256,blank=True)
+
+    def __str__(self):
+        return self.metatitle
+
 class AboutUs(models.Model):
     metatitle = models.TextField(max_length=60,blank=False)
     metadescription = models.TextField(max_length=250, blank=False)

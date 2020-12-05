@@ -56,3 +56,8 @@ class Blog(models.Model):
             new_image = (350,270)
             image.thumbnail(new_image)
             image.save(self.blogimage.path)
+
+
+class AddImage(models.Model):
+    post = models.ForeignKey(to=Blog,on_delete=models.CASCADE)
+    addimage = models.ImageField(upload_to='blogs/')

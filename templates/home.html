@@ -24,10 +24,11 @@
       <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
       <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
       <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
-      <link rel="stylesheet" href="{% static 'assets/css/style.default.css'%}">
       <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+      <link href="{% static 'assets/css/socialbutton.css' %}" rel="stylesheet">
       <link rel="stylesheet" href="{% static 'assets/css/video.css' %}">
-
+      <link href='https://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>   
+      <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
    </head>
    <body>
       <!-- ======= Header ======= -->
@@ -39,12 +40,12 @@
             <nav class="nav-menu d-none d-lg-block">
                <ul>
                   <li class="active"><a href="{% url 'home' %}">Home</a></li>
-                  <li><a href="#about">About</a></li>
+                  <li><a href="{% url 'aboutus' %}">About</a></li>
                   <li class="drop-down">
-                    <a href="">Services</a>
+                    <a href="{% url 'service'%}">Services</a>
                     <ul>
                        <li class="drop-down">
-                         <a href="#">Digital Marketing</a>
+                         <a href="{% url 'digital_marketing' %}">Digital Marketing</a>
                          <ul>
                            <li><a href="#">Search Engine Optimization</a></li>
                            <li><a href="#">Social Media Optimization</a></li>
@@ -54,24 +55,35 @@
                            <li><a href="#">Branding</a></li>
                          </ul>
                       </li>
-                       <li><a href="#">Graphics Design and Multimedia</a></li>
+                       <li><a href="{% url 'graphics_design'%}">Graphics Design and Multimedia</a></li>
                        <li class="drop-down">
-                        <a href="#">Design and Development</a>
+                        <a href="{% url 'websitedesignanddevelopment'%}">Design and Development</a>
                         <ul>
-                          <li><a href="#">Website Design and Development</a></li>
-                          <li><a href="#">Mobile Development</a></li>
+                          <li><a href="{% url 'websitedesignanddevelopment'%}">Website Design and Development</a></li>
+                          <li><a href="{% url 'mobile_app' %}">Mobile Development</a></li>
                         </ul>
                        </li>
                     </ul>
                  </li>
-                  <li><a href="#pricing">Our Packages</a></li>
+                  <li><a href="{% url 'ourpackage' %}">Our Packages</a></li>
                   <li><a href="{% url 'blogs' %}">Blog</a></li>
-                  <li><a href="#contact">Contact</a></li>
+                  <li><a href="{% url 'contact'%}">Contact</a></li>
                </ul>
             </nav>
-            <!-- .nav-menu -->
+       
          </div>
       </header>
+      <ul class="menu bottomLeft">
+         <li class="share top">
+           <i class="fa fa-share-alt"></i>
+           <ul class="submenu">
+             <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+             <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+             <li><a href="#" class="googlePlus"><i class="fa fa-google-plus"></i></a></li>
+             <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+           </ul>
+         </li>
+       </ul>
       <!-- End Header -->
       <!-- ======= Hero Section ======= -->
       <div class="body-content">
@@ -159,7 +171,7 @@
                         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
                         culpa qui officia deserunt mollit anim id est laborum.
                      </p>
-                     <a href="#" class="btn-learn-more">Learn More</a>
+                     <a href="{% url 'aboutus' %}" class="btn-learn-more">Learn More</a>
                   </div>
                </div>
             </div>
@@ -357,7 +369,7 @@
          </section>
          <!-- End Services Section -->
          <!-- ======= Portfolio Section ======= -->
-         <section id="portfolio" class="portfolio">
+         <!-- <section id="portfolio" class="portfolio">
             <div class="container">
                <div class="section-title" data-aos="zoom-out">
                   <h2>Portfolio</h2>
@@ -453,7 +465,7 @@
                   </div>
                </div>
             </div>
-         </section>
+         </section> -->
          <!-- End Portfolio Section -->
          <!-- ======= Testimonials Section ======= -->
          <section id="testimonials" class="testimonials">
@@ -594,8 +606,40 @@
             </div>
          </section>
          <!-- End Pricing Section -->
+         <!-- Blog -->
+         <section id="blog" class="padd-section wow fadeInUp">
+
+            <div class="container">
+              <div class="section-title" data-aos="zoom-out">
+        
+                <h2>Latest Blog</h2>
+                <p class="separator">Integer cursus bibendum augue ac cursus .</p>
+        
+              </div>
+            </div>
+        
+            <div class="container">
+              <div class="row">
+               {% for blogs in latestBlogs %}
+                <div class="col-md-6 col-lg-4">
+                  <div class="block-blog text-left">
+                    <a href="{% url 'BlogDetailPage' blogs.link %}"><img src="{{blogs.blogimage.url}}" alt="img" class="img-fluid home-image"></a>
+                    <div class="content-blog">
+                      <h6><a href="{% url 'BlogDetailPage' blogs.link %}">{{blogs.title}}</a></h6>
+                      <span><small>{{blogs.published}}</small></span>
+                      <a class="pull-right readmore" href="{% url 'BlogDetailPage' blogs.link %}">read more</a>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+        
+
+              </div>
+            </div>
+          </section>
+          <!-- End of Blog -->
          <!-- ======= Contact Section ======= -->
-         <section id="contact" class="contact">
+         <!-- <section id="contact" class="contact">
             <div class="container">
                <div class="section-title" data-aos="zoom-out">
                   <h2>Contact</h2>
@@ -651,7 +695,7 @@
                   </div>
                </div>
             </div>
-         </section>
+         </section> -->
          <!-- End Contact Section -->
       </main>
       <!-- End #main -->

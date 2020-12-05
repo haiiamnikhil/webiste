@@ -139,6 +139,11 @@
     } else {
       $('.back-to-top').fadeOut('slow');
     }
+    if ($(this).scrollTop() > 100) {
+      $('.bottomLeft').fadeIn('slow');
+    } else {
+      $('.bottomLeft').fadeOut('slow');
+    }
   });
 
   $('.back-to-top').click(function() {

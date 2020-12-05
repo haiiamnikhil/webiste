@@ -29,11 +29,14 @@ def BlogDetailPage(request,link):
 
     getBlog = Blog.objects.filter(link=link)
     tags = [tag for tag in Blog.objects.all() if tag is not None]
-    print(Blog.objects.filter(link=link))
+    categories = BlogCategory.objects.all()
+    recentpost = Blog.objects.filter(status=2).order_by('-published')[0:5]
     return render(
-        request,'bloglist.html',
+        request,'blogdetailpage.html',
         {
             'blog':getBlog,
+            'categories':categories,
+            'recentpost':recentpost,
             'tags':tags,
             'metatitle':Blog.objects.filter(link=link)[0]
         }

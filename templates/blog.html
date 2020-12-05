@@ -1,5 +1,6 @@
 {% extends "home.html" %}
 {% block content %}
+<section class="blog"> 
   <div class="container widthadjust">
 
     <div class="nav-scroller py-1 mb-2">
@@ -8,7 +9,7 @@
     <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
       <div class="col-md-6 px-0">
         <h1 class="display-4 font-italic">{{latestpost.title}}</h1>
-        <p class="lead my-3">{{latestpost.description | slice:100 }}...</p>
+        <p class="lead my-3">{{latestpost.description | slice:100 | safe }}...</p>
         <p class="lead mb-0"><a href="{% url 'BlogDetailPage' latestpost.link %}" class="text-white font-weight-bold">Continue reading...</a></p>
       </div>
     </div>
@@ -21,45 +22,67 @@
           <div class="card-body d-flex flex-column align-items-start">
             <strong class="d-inline-block mb-2 text-primary">{{post.postcategory}}</strong>
             <h3 class="mb-0">
-              <a class="text-dark" href="#">{{post.title}}</a>
+              <a class="text-dark" href="{% url 'BlogDetailPage' post.link %}">{{post.title}}</a>
             </h3>
-            <div class="mb-1 text-muted">{{post.published}}</div>
-            <p class="card-text mb-auto">{{post.description | slice:50}}</p>
-            <a href="{% url 'BlogDetailPage' post.link %}">Continue reading</a>
+            <!-- <div class="mb-1 text-muted">{{post.published}}</div> -->
+            <p class="card-text mb-auto">{{post.description | slice:100 | safe}}...</p>
+            <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
+              <div class="title"><span><small>{{post.author}}</span></div></a> |
+            <div class="date"><i class="icon-clock"></i>{{post.published}}</small></div>
+            <!-- <div class="comments meta-last"><i class="icon-comment"></i>12</div> -->
+          </footer>
+            <!-- <a href="{% url 'BlogDetailPage' post.link %}">Continue reading</a> -->
           </div>
           <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17621f17a27%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A13pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17621f17a27%22%3E%3Crect%20width%3D%22200%22%20height%3D%22250%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2256.1953125%22%20y%3D%22131%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
         </div>
       </div>
       {% endfor %}
     </div>
-  </div>
+  
+<div class="row">
+  <div class="col-lg-8 entries">
+    {% for blog in blogs %}
+    <article class="entry">
 
-  <div class="container widthadjust">
-    <div class="row">
-      <!-- Latest Posts -->
-      <main class="posts-listing col-lg-8"> 
-        <div class="container">
-          <div class="row">
-            {% for blog in blogs %}
-            <!-- post -->
-            <div class="mx-auto post col-xl-4">
-              <div class="post-thumbnail"><a href="post.html"><img src="{{blog.blogimage.url}}" alt="..." class="img-fluid"></a></div>
-              <div class="post-details">
-                <div class="post-meta d-flex justify-content-between">
-                  <div class="date meta-last">{{blog.published}}</div>
-                  <div class="category"><a href="#">{{blog.category}}</a></div>
-                </div><a href="{% url 'BlogDetailPage' blog.link %}">
-                  <h3 class="h4">{{blog.title}}</h3></a>
-                <p class="text-muted">{{blog.description | slice:150}}</p>
-                <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
-                    <!-- <div class="avatar"><img src="img/avatar-3.jpg" alt="..." class="img-fluid"></div> -->
-                    <div class="title"><span>{{blog.author}}</span></div></a>
-                  <div class="date"><i class="icon-clock"></i>{{blog.published}}</div>
-                  <div class="comments meta-last"><i class="icon-comment"></i>12</div>
-                </footer>
-              </div>
-            </div>
-            {% endfor %}
+      <div class="entry-img">
+        <img src="{{blog.blogimage.url}}" alt="" class="img-fluid">
+      </div>
+
+      <h2 class="entry-title">
+        <a href="{% url 'BlogDetailPage' blog.link %}">{{blog.title}}</a>
+      </h2>
+
+      <div class="entry-meta">
+        <ul>
+          <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">{{blog.author}}</a></li>
+          <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">{{blog.published}}</time></a></li>
+          <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a href="blog-single.html">12 Comments</a></li>
+        </ul>
+      </div>
+
+      <div class="entry-content">
+        <p>
+          {{blog.description | slice:500 | safe}}
+        </p>
+        <div class="read-more">
+          <a href="{% url 'BlogDetailPage' blog.link %}">Read More</a>
+        </div>
+      </div>
+
+    </article><!-- End blog entry -->
+    {% endfor %}
+
+    <div class="blog-pagination">
+      <ul class="justify-content-center">
+        <li class="disabled"><i class="icofont-rounded-left"></i></li>
+        <li><a href="#">1</a></li>
+        <li class="active"><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#"><i class="icofont-rounded-right"></i></a></li>
+      </ul>
+    </div>
+
+  </div><!-- End blog entries list -->
             <!-- post             -->
           <!-- Pagination -->
           <!-- <nav aria-label="Page navigation example">
@@ -71,84 +94,67 @@
               <li class="page-item"><a href="#" class="page-link"> <i class="fa fa-angle-right"></i></a></li>
             </ul>
           </nav> -->
-        </div>
+
       </main>
-      <aside class="col-lg-4">
-        <div class="widget search">
-          <header>
-            <h3 class="h6">Search the blog</h3>
-          </header>
-          <form action="#" class="search-form">
-            <div class="form-group">
-              <input type="search" placeholder="What are you looking for?">
-              <button type="submit" class="submit"><i class="icon-search"></i></button>
-            </div>
-          </form>
-        </div>
-        <!-- Widget [Latest Posts Widget]        -->
-        <div class="widget latest-posts">
-          <header>
-            <h3 class="h6">Latest Posts</h3>
-          </header>
-          <div class="blog-posts">
-            {% for post in recentpost %}
-            <a href="{% url 'BlogDetailPage' post.link %}">
-              <div class="item d-flex align-items-center">
-                <div class="image"><img src="{{post.blogimage.url}}" alt="{{post.blogimage}}" class="img-fluid"></div>
-                <div class="title"><strong>{{post.title}}</strong>
-                  <div class="d-flex align-items-center">
-                    <div class="views"><i class="icon-eye"></i> 500</div>
-                    <div class="comments"><i class="icon-comment"></i>12</div>
-                  </div>
-                </div>
-              </div></a>
+      
+
+      
+      <div class="col-lg-4">
+
+        <div class="sidebar">
+
+          <h3 class="sidebar-title">Search</h3>
+          <div class="sidebar-item search-form">
+            <form action="">
+              <input type="text">
+              <button type="submit"><i class="icofont-search"></i></button>
+            </form>
+          </div><!-- End sidebar search formn-->
+
+          <h3 class="sidebar-title">Categories</h3>
+          <div class="sidebar-item categories">
+            <ul>
+              {% for category in categories %}
+              <li><a href="#">{{category}} <span>(25)</span></a></li>
               {% endfor %}
-              </div>
-        </div>
-        <!-- Widget [Categories Widget]-->
-        <div class="widget categories">
-          <header>
-            <h3 class="h6">Categories</h3>
-          </header>
-          {% for category in categories %}
-          <div class="item d-flex justify-content-between"><a href="#">{{category}}</a><span>12</span></div>
-          {% endfor %}
-        </div>
-        <!-- Widget [Tags Cloud Widget]-->
-        <div class="widget tags">       
-          <header>
-            <h3 class="h6">Tags</h3>
-          </header>
-          <ul class="list-inline">
-            <li class="list-inline-item"><a href="#" class="tag">#Business</a></li>
-            <li class="list-inline-item"><a href="#" class="tag">#Technology</a></li>
-            <li class="list-inline-item"><a href="#" class="tag">#Fashion</a></li>
-            <li class="list-inline-item"><a href="#" class="tag">#Sports</a></li>
-            <li class="list-inline-item"><a href="#" class="tag">#Economy</a></li>
-          </ul>
-        </div>
-      </aside>
+            </ul>
+          </div><!-- End sidebar categories-->
+
+          <h3 class="sidebar-title">Recent Posts</h3>
+          <div class="sidebar-item recent-posts">
+            {% for post in recentpost %}
+            <div class="post-item clearfix">
+              <img src="{{post.blogimage.url}}" alt="{{post.title}}">
+              <h4><a href="{% url 'BlogDetailPage' post.link %}">{{post.title}}</a></h4>
+              <time datetime="2020-01-01">{{post.published}}</time>
+            </div>
+            {% endfor %}
+
+          </div><!-- End sidebar recent posts-->
+
+          <h3 class="sidebar-title">Tags</h3>
+          <div class="sidebar-item tags">
+            <ul>
+              <li><a href="#">App</a></li>
+              <li><a href="#">IT</a></li>
+              <li><a href="#">Business</a></li>
+              <li><a href="#">Mac</a></li>
+              <li><a href="#">Design</a></li>
+              <li><a href="#">Office</a></li>
+              <li><a href="#">Creative</a></li>
+              <li><a href="#">Studio</a></li>
+              <li><a href="#">Smart</a></li>
+              <li><a href="#">Tips</a></li>
+              <li><a href="#">Marketing</a></li>
+            </ul>
+          </div><!-- End sidebar tags-->
+
+        </div><!-- End sidebar -->
+
+      </div><!-- End blog sidebar -->
+ 
     </div>
   </div>
-
-
-
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-  <script src="../../assets/js/vendor/popper.min.js"></script>
-  <script src="../../dist/js/bootstrap.min.js"></script>
-  <script src="../../assets/js/vendor/holder.min.js"></script>
-  <script>
-    Holder.addTheme('thumb', {
-      bg: '#55595c',
-      fg: '#eceeef',
-      text: 'Thumbnail'
-    });
-  </script>
-
-
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="250" viewBox="0 0 200 250" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="13" style="font-weight:bold;font-size:13pt;font-family:Arial, Helvetica, Open Sans, sans-serif">Thumbnail</text></svg>
+  </div>
+</section>
 {% endblock %}
