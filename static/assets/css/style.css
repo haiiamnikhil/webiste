@@ -563,6 +563,10 @@ section {
   color: #2a2c39;
 }
 
+.section-title .coloradjust{
+  color:white;
+}
+
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
@@ -637,7 +641,7 @@ section {
   border: 1px solid #d4d6df;
   padding: 15px;
   transition: 0.3s;
-  color: #2a2c39;
+  color: white;
   border-radius: 0;
   display: flex;
   align-items: center;
@@ -1938,6 +1942,17 @@ main.posts-listing .post-footer {
   height: 270px;
 }
 
+section#features {
+  background-color: #2a2c39;
+  color: white;
+  box-shadow: 0px 0px 20px 0px #4c4c4c;
+}
+
+section#pricing {
+  background-color: #2a2c39;
+  color: white;
+  box-shadow: 0px 0px 20px 0px #4c4c4c;
+}
 /* blog */
 
 .blog {

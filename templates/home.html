@@ -26,13 +26,14 @@
       <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
       <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
       <link href="{% static 'assets/css/socialbutton.css' %}" rel="stylesheet">
+      <link href="{% static 'assets/css/header.css' %}" rel="stylesheet">
       <link rel="stylesheet" href="{% static 'assets/css/video.css' %}">
       <link href='https://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>   
       <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
    </head>
    <body>
       <!-- ======= Header ======= -->
-      <header id="header" class="fixed-top d-flex align-items-center">
+      <!-- <header id="header" class="fixed-top d-flex align-items-center">
          <div class="container d-flex align-items-center">
             <div class="logo mr-auto">
                <h1 class="text-light"><a href="{% url 'home' %}"><img src="{% static 'assets/sitelogo/hashengines.png' %}" alt=""></a></h1>
@@ -47,19 +48,19 @@
                        <li class="drop-down">
                          <a href="{% url 'digital_marketing' %}">Digital Marketing</a>
                          <ul>
-                           <li><a href="#">Search Engine Optimization</a></li>
-                           <li><a href="#">Social Media Optimization</a></li>
-                           <li><a href="#">Email Marketing</a></li>
-                           <li><a href="#">Content Marketing</a></li>
-                           <li><a href="#">Pay Per Click Management</a></li>
-                           <li><a href="#">Branding</a></li>
+                           <li><a href="{% url 'seo'%}">Search Engine Optimization</a></li>
+                           <li><a href="{% url 'smo'%}">Social Media Optimization</a></li>
+                           <li><a href="{% url 'emailmarketing'%}">Email Marketing</a></li>
+                           <li><a href="{% url 'contentmarketing'%}">Content Marketing</a></li>
+                           <li><a href="{% url 'ppcm'%}">Pay Per Click Management</a></li>
+                           <li><a href="{% url 'branding'%}">Branding</a></li>
                          </ul>
                       </li>
                        <li><a href="{% url 'graphics_design'%}">Graphics Design and Multimedia</a></li>
                        <li class="drop-down">
-                        <a href="{% url 'websitedesignanddevelopment'%}">Design and Development</a>
+                        <a href="{% url 'designanddevelopment'%}">Design and Development</a>
                         <ul>
-                          <li><a href="{% url 'websitedesignanddevelopment'%}">Website Design and Development</a></li>
+                          <li><a href="{% url 'website_design_development'%}">Website Design and Development</a></li>
                           <li><a href="{% url 'mobile_app' %}">Mobile Development</a></li>
                         </ul>
                        </li>
@@ -72,7 +73,42 @@
             </nav>
        
          </div>
-      </header>
+      </header> -->
+      <div class="navbar">
+         <a href="#home">Home</a>
+         <a href="#news">News</a>
+         <div class="dropdown">
+           <button class="dropbtn">Dropdown 
+             <i class="fa fa-caret-down"></i>
+           </button>
+           <div class="dropdown-content">
+             <div class="header">
+               <h2>Mega Menu</h2>
+             </div>   
+             <div class="row">
+               <div class="column">
+                 <h3>Category 1</h3>
+                 <a href="#">Link 1</a>
+                 <a href="#">Link 2</a>
+                 <a href="#">Link 3</a>
+               </div>
+               <div class="column">
+                 <h3>Category 2</h3>
+                 <a href="#">Link 1</a>
+                 <a href="#">Link 2</a>
+                 <a href="#">Link 3</a>
+               </div>
+               <div class="column">
+                 <h3>Category 3</h3>
+                 <a href="#">Link 1</a>
+                 <a href="#">Link 2</a>
+                 <a href="#">Link 3</a>
+               </div>
+             </div>
+           </div>
+         </div> 
+       </div>
+       
       <ul class="menu bottomLeft">
          <li class="share top">
            <i class="fa fa-share-alt"></i>
@@ -530,81 +566,71 @@
          </section>
          <!-- End Testimonials Section -->
          <!-- ======= Pricing Section ======= -->
-         <section id="pricing" class="pricing">
-            <div class="container">
-               <div class="section-title" data-aos="zoom-out">
-                  <h2>Pricing</h2>
-                  <p>Our Competing Prices</p>
-               </div>
-               <div class="row">
-                  <div class="col-lg-3 col-md-6">
-                     <div class="box" data-aos="zoom-in">
-                        <h3>Free</h3>
-                        <h4><sup>$</sup>0<span> / month</span></h4>
-                        <ul>
-                           <li>Aida dere</li>
-                           <li>Nec feugiat nisl</li>
-                           <li>Nulla at volutpat dola</li>
-                           <li class="na">Pharetra massa</li>
-                           <li class="na">Massa ultricies mi</li>
-                        </ul>
-                        <div class="btn-wrap">
-                           <a href="#" class="btn-buy">Buy Now</a>
-                        </div>
-                     </div>
+         <section id="pricing" class="pricing section-bg">
+            <div class="container" data-aos="fade-up">
+      
+              <div class="section-title">
+                <h2>Pricing</h2>
+                <p class="coloradjust">Here are some of Our Packages</p>
+              </div>
+      
+              <div class="row">
+      
+                <div class="col-lg-4 col-md-6">
+                  <div class="box" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Free</h3>
+                    <h4><sup>$</sup>0<span> / month</span></h4>
+                    <ul>
+                      <li>Aida dere</li>
+                      <li>Nec feugiat nisl</li>
+                      <li>Nulla at volutpat dola</li>
+                      <li class="na">Pharetra massa</li>
+                      <li class="na">Massa ultricies mi</li>
+                    </ul>
+                    <div class="btn-wrap">
+                      <a href="#" class="btn-buy">Buy Now</a>
+                    </div>
                   </div>
-                  <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
-                     <div class="box featured" data-aos="zoom-in" data-aos-delay="100">
-                        <h3>Business</h3>
-                        <h4><sup>$</sup>19<span> / month</span></h4>
-                        <ul>
-                           <li>Aida dere</li>
-                           <li>Nec feugiat nisl</li>
-                           <li>Nulla at volutpat dola</li>
-                           <li>Pharetra massa</li>
-                           <li class="na">Massa ultricies mi</li>
-                        </ul>
-                        <div class="btn-wrap">
-                           <a href="#" class="btn-buy">Buy Now</a>
-                        </div>
-                     </div>
+                </div>
+      
+                <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+                  <div class="box featured" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Business</h3>
+                    <h4><sup>$</sup>19<span> / month</span></h4>
+                    <ul>
+                      <li>Aida dere</li>
+                      <li>Nec feugiat nisl</li>
+                      <li>Nulla at volutpat dola</li>
+                      <li>Pharetra massa</li>
+                      <li class="na">Massa ultricies mi</li>
+                    </ul>
+                    <div class="btn-wrap">
+                      <a href="#" class="btn-buy">Buy Now</a>
+                    </div>
                   </div>
-                  <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-                     <div class="box" data-aos="zoom-in" data-aos-delay="200">
-                        <h3>Developer</h3>
-                        <h4><sup>$</sup>29<span> / month</span></h4>
-                        <ul>
-                           <li>Aida dere</li>
-                           <li>Nec feugiat nisl</li>
-                           <li>Nulla at volutpat dola</li>
-                           <li>Pharetra massa</li>
-                           <li>Massa ultricies mi</li>
-                        </ul>
-                        <div class="btn-wrap">
-                           <a href="#" class="btn-buy">Buy Now</a>
-                        </div>
-                     </div>
+                </div>
+      
+                <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+                  <div class="box" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Developer</h3>
+                    <h4><sup>$</sup>29<span> / month</span></h4>
+                    <ul>
+                      <li>Aida dere</li>
+                      <li>Nec feugiat nisl</li>
+                      <li>Nulla at volutpat dola</li>
+                      <li>Pharetra massa</li>
+                      <li>Massa ultricies mi</li>
+                    </ul>
+                    <div class="btn-wrap">
+                      <a href="#" class="btn-buy">Buy Now</a>
+                    </div>
                   </div>
-                  <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-                     <div class="box" data-aos="zoom-in" data-aos-delay="300">
-                        <span class="advanced">Advanced</span>
-                        <h3>Ultimate</h3>
-                        <h4><sup>$</sup>49<span> / month</span></h4>
-                        <ul>
-                           <li>Aida dere</li>
-                           <li>Nec feugiat nisl</li>
-                           <li>Nulla at volutpat dola</li>
-                           <li>Pharetra massa</li>
-                           <li>Massa ultricies mi</li>
-                        </ul>
-                        <div class="btn-wrap">
-                           <a href="#" class="btn-buy">Buy Now</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+                </div>
+      
+              </div>
+      
             </div>
-         </section>
+          </section><!-- End Pricing Section -->
          <!-- End Pricing Section -->
          <!-- Blog -->
          <section id="blog" class="padd-section wow fadeInUp">
@@ -738,5 +764,13 @@
       <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
       <!-- Template Main JS File -->
       <script src="{% static 'assets/js/main.js' %}"></script>
+      <script>
+         function showSubMenu(){
+            document.getElementsByClassName('.dropdown-content')
+         }
+         $('button').click(function(){
+            $('.dropdown-content').hide().slideDown();
+         })
+      </script>
    </body>
 </html>
