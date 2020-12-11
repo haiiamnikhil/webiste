@@ -1573,38 +1573,142 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #14151c;
+  background: #fff;
+  padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
-  text-align: center;
-  padding: 30px 0;
+  background: #eff2f8;
 }
 
-#footer h3 {
-  font-size: 36px;
+#footer .footer-newsletter {
+  padding: 50px 0;
+  background: #eff2f8;
+  text-align: center;
+  font-size: 15px;
+}
+
+#footer .footer-newsletter h4 {
+  font-size: 24px;
+  margin: 0 0 20px 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 600;
+  color: #47536e;
+}
+
+#footer .footer-newsletter form {
+  margin-top: 30px;
+  background: #fff;
+  padding: 6px 10px;
+  position: relative;
+  border-radius: 50px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+#footer .footer-newsletter form input[type="email"] {
+  border: 0;
+  padding: 4px 8px;
+  width: calc(100% - 100px);
+}
+
+#footer .footer-newsletter form input[type="submit"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  padding: 0 20px;
+  background: #5777ba;
+  color: #fff;
+  transition: 0.3s;
+  border-radius: 50px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+#footer .footer-newsletter form input[type="submit"]:hover {
+  background: #415f9d;
+}
+
+#footer .footer-top {
+  padding: 60px 0 30px 0;
+  background: #2a2c39;
+}
+
+#footer .footer-top .footer-contact {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-contact h4 {
+  font-size: 22px;
+  margin: 0 0 30px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
   font-weight: 700;
+  color: #47536e;
+}
+
+#footer .footer-top .footer-contact p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+}
+
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: bold;
   color: #fff;
   position: relative;
-  font-family: "Poppins", sans-serif;
+  padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
   padding: 0;
-  margin: 0 0 15px 0;
+  margin: 0;
 }
 
-#footer p {
-  font-size: 15;
-  font-style: italic;
-  padding: 0;
-  margin: 0 0 40px 0;
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: #9fb2d8;
+  font-size: 18px;
+  line-height: 1;
 }
 
-#footer .social-links {
-  margin: 0 0 40px 0;
+#footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
 }
 
-#footer .social-links a {
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: #fff;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  text-decoration: none;
+  color: #5777ba;
+}
+
+#footer .footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #ef6603;
+  background: #5777ba;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
@@ -1616,19 +1720,34 @@ section {
   transition: 0.3s;
 }
 
-#footer .social-links a:hover {
-  background: #bd5102;
+#footer .footer-top .social-links a:hover {
+  background: #27282c;
   color: #fff;
   text-decoration: none;
 }
 
 #footer .copyright {
-  margin: 0 0 5px 0;
+  text-align: center;
+  float: left;
+  color: #47536e;
 }
 
 #footer .credits {
+  float: right;
+  text-align: center;
   font-size: 13px;
+  color: #47536e;
 }
+
+@media (max-width: 768px) {
+  #footer .copyright, #footer .credits {
+    float: none;
+    text-align: center;
+    padding: 5px 0;
+  }
+}
+
+/* Container */
 
 .container.widthadjust {
   max-width: 1500px;
@@ -2664,4 +2783,35 @@ section#pricing {
   padding-right: 10px;
   color: #e03a3c;
   content: "/";
+}
+
+/* Details */
+
+.details .content + .content {
+  margin-top: 100px;
+}
+
+.details .content h3 {
+  font-weight: 700;
+  font-size: 32px;
+  color: #47536e;
+}
+
+.details .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.details .content ul li {
+  padding-bottom: 10px;
+}
+
+.details .content ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #5777ba;
+}
+
+.details .content p:last-child {
+  margin-bottom: 0;
 }

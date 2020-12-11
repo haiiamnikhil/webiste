@@ -33,82 +33,67 @@
    </head>
    <body>
       <!-- ======= Header ======= -->
-      <!-- <header id="header" class="fixed-top d-flex align-items-center">
-         <div class="container d-flex align-items-center">
+      <header>
+         <nav class="navbar container widthadjust">
+            <span class="navbar-toggle" id="js-navbar-toggle" onclick="openNav()">
+                <i class="fa fa-bars"></i>
+            </span>
             <div class="logo mr-auto">
-               <h1 class="text-light"><a href="{% url 'home' %}"><img src="{% static 'assets/sitelogo/hashengines.png' %}" alt=""></a></h1>
+               <h1 class="text-light"><a href="{% url 'home' %}"><img src="{% static 'assets/sitelogo/hashengines.png' %}" alt="hashengineslogo" style='width: 85%;'></a></h1>
             </div>
-            <nav class="nav-menu d-none d-lg-block">
-               <ul>
-                  <li class="active"><a href="{% url 'home' %}">Home</a></li>
-                  <li><a href="{% url 'aboutus' %}">About</a></li>
-                  <li class="drop-down">
-                    <a href="{% url 'service'%}">Services</a>
-                    <ul>
-                       <li class="drop-down">
-                         <a href="{% url 'digital_marketing' %}">Digital Marketing</a>
-                         <ul>
-                           <li><a href="{% url 'seo'%}">Search Engine Optimization</a></li>
-                           <li><a href="{% url 'smo'%}">Social Media Optimization</a></li>
-                           <li><a href="{% url 'emailmarketing'%}">Email Marketing</a></li>
-                           <li><a href="{% url 'contentmarketing'%}">Content Marketing</a></li>
-                           <li><a href="{% url 'ppcm'%}">Pay Per Click Management</a></li>
-                           <li><a href="{% url 'branding'%}">Branding</a></li>
-                         </ul>
-                      </li>
-                       <li><a href="{% url 'graphics_design'%}">Graphics Design and Multimedia</a></li>
-                       <li class="drop-down">
-                        <a href="{% url 'designanddevelopment'%}">Design and Development</a>
-                        <ul>
-                          <li><a href="{% url 'website_design_development'%}">Website Design and Development</a></li>
-                          <li><a href="{% url 'mobile_app' %}">Mobile Development</a></li>
-                        </ul>
+            <div class='desktop-nav' id="desktop">
+               <ul class="main-nav" id="js-menu">
+                   <li>
+                       <a href="{% url 'home' %}" class="nav-links">Home</a>
+                   </li>
+                   <li>
+                       <a href="{% url 'aboutus' %}" class="nav-links">About</a>
+                   </li>
+                   <li>
+                     <a href="{% url 'service'%}" id="dropdown" class="nav-links dropdown-toggle">Services<span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li">
+                          <a href="{% url 'digital_marketing' %}" class="nav-links dropdown-toggle"><span class="caret"></span>Digital Marketing</a>
+                          <ul class="dropdown-menu">
+                            <li><a href="{% url 'seo'%}" class="nav-links">Search Engine Optimization</a></li>
+                            <li><a href="{% url 'smo'%}" class="nav-links">Social Media Optimization</a></li>
+                            <li><a href="{% url 'emailmarketing'%}"class="nav-links">Email Marketing</a></li>
+                            <li><a href="{% url 'contentmarketing'%}" class="nav-links">Content Marketing</a></li>
+                            <li><a href="{% url 'ppcm'%}" class="nav-links">Pay Per Click Management</a></li>
+                            <li><a href="{% url 'branding'%}" class="nav-links">Branding</a></li>
+                          </ul>
                        </li>
-                    </ul>
+                        <li><a href="{% url 'graphics_design'%}" class="nav-links">Graphics Design and Multimedia</a></li>
+                        <li class="drop-down">
+                         <a href="{% url 'designanddevelopment'%}" class="nav-links">Design and Development</a>
+                         <ul class="dropdown-menu">
+                           <li><a href="{% url 'website_design_development'%}" class="nav-links">Website Design and Development</a></li>
+                           <li><a href="{% url 'mobile_app' %}" class="nav-links">Mobile Development</a></li>
+                         </ul>
+                        </li>
+                     </ul>
+                  </li>
+                   <li>
+                       <a href="{% url 'ourpackage' %}" class="nav-links">Our Packages</a>
+                   </li>
+                   <li>
+                       <a href="{% url 'blogs' %}" class="nav-links">Blog</a>
+                   </li>
+                   <li>
+                     <a href="{% url 'contact'%}" class="nav-links">Contact</a>
                  </li>
-                  <li><a href="{% url 'ourpackage' %}">Our Packages</a></li>
-                  <li><a href="{% url 'blogs' %}">Blog</a></li>
-                  <li><a href="{% url 'contact'%}">Contact</a></li>
                </ul>
-            </nav>
-       
-         </div>
-      </header> -->
-      <div class="navbar">
-         <a href="#home">Home</a>
-         <a href="#news">News</a>
-         <div class="dropdown">
-           <button class="dropbtn">Dropdown 
-             <i class="fa fa-caret-down"></i>
-           </button>
-           <div class="dropdown-content">
-             <div class="header">
-               <h2>Mega Menu</h2>
-             </div>   
-             <div class="row">
-               <div class="column">
-                 <h3>Category 1</h3>
-                 <a href="#">Link 1</a>
-                 <a href="#">Link 2</a>
-                 <a href="#">Link 3</a>
-               </div>
-               <div class="column">
-                 <h3>Category 2</h3>
-                 <a href="#">Link 1</a>
-                 <a href="#">Link 2</a>
-                 <a href="#">Link 3</a>
-               </div>
-               <div class="column">
-                 <h3>Category 3</h3>
-                 <a href="#">Link 1</a>
-                 <a href="#">Link 2</a>
-                 <a href="#">Link 3</a>
-               </div>
+            </div>
+            <div id="mobile-nav" class="sidenav">
+               <a href="#">About</a>
+               <a href="#">Services</a>
+               <a href="#">Clients</a>
+               <a href="#">Contact</a>
              </div>
-           </div>
-         </div> 
-       </div>
-       
+        
+        </nav>
+      </header>
+   
       <ul class="menu bottomLeft">
          <li class="share top">
            <i class="fa fa-share-alt"></i>
@@ -633,8 +618,12 @@
           </section><!-- End Pricing Section -->
          <!-- End Pricing Section -->
          <!-- Blog -->
+         
+      </main>
+   </div>   
+      {% endblock %}
          <section id="blog" class="padd-section wow fadeInUp">
-
+   
             <div class="container">
               <div class="section-title" data-aos="zoom-out">
         
@@ -659,98 +648,77 @@
                 </div>
                 {% endfor %}
         
-
+   
               </div>
             </div>
           </section>
-          <!-- End of Blog -->
-         <!-- ======= Contact Section ======= -->
-         <!-- <section id="contact" class="contact">
-            <div class="container">
-               <div class="section-title" data-aos="zoom-out">
-                  <h2>Contact</h2>
-                  <p>Contact Us</p>
-               </div>
-               <div class="row mt-5">
-                  <div class="col-lg-4" data-aos="fade-right">
-                     <div class="info">
-                        <div class="address">
-                           <i class="icofont-google-map"></i>
-                           <h4>Location:</h4>
-                           <p>A108 Adam Street, New York, NY 535022</p>
-                        </div>
-                        <div class="email">
-                           <i class="icofont-envelope"></i>
-                           <h4>Email:</h4>
-                           <p>info@example.com</p>
-                        </div>
-                        <div class="phone">
-                           <i class="icofont-phone"></i>
-                           <h4>Call:</h4>
-                           <p>+1 5589 55488 55s</p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
-                     <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                        <div class="form-row">
-                           <div class="col-md-6 form-group">
-                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                              <div class="validate"></div>
-                           </div>
-                           <div class="col-md-6 form-group">
-                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                              <div class="validate"></div>
-                           </div>
-                        </div>
-                        <div class="form-group">
-                           <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                           <div class="validate"></div>
-                        </div>
-                        <div class="form-group">
-                           <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                           <div class="validate"></div>
-                        </div>
-                        <div class="mb-3">
-                           <div class="loading">Loading</div>
-                           <div class="error-message"></div>
-                           <div class="sent-message">Your message has been sent. Thank you!</div>
-                        </div>
-                        <div class="text-center"><button type="submit">Send Message</button></div>
-                     </form>
-                  </div>
-               </div>
+   
+   <footer id="footer">
+
+  
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+  
+            <div class="col-lg-3 col-md-6 footer-contact" data-aos="fade-up">
+              <h3>Appland</h3>
+              <p>
+                A108 Adam Street <br>
+                New York, NY 535022<br>
+                United States <br><br>
+                <strong>Phone:</strong> +1 5589 55488 55<br>
+                <strong>Email:</strong> info@example.com<br>
+              </p>
             </div>
-         </section> -->
-         <!-- End Contact Section -->
-      </main>
-      <!-- End #main -->
-      <!-- ======= Footer ======= -->
-      {% endblock %}
-   </div>
-      <footer id="footer">
-         <div class="container">
-            <h3>HashEngines</h3>
-            <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-            <div class="social-links">
-               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-               <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-               <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-               <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+  
+            <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="100">
+              <h4>Useful Links</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              </ul>
             </div>
-            <div class="copyright">
-               &copy; Copyright <strong><span>HashEngines</span></strong>. All Rights Reserved
+  
+            <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
+              <h4>Our Services</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              </ul>
             </div>
-            <div class="credits">
-               <!-- All the links in the footer should remain intact. -->
-               <!-- You can delete the links only if you purchased the pro version. -->
-               <!-- Licensing information: https://bootstrapmade.com/license/ -->
-               <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/selecao-bootstrap-template/ -->
-               Designed by <strong><a href="https://allianzeinfosoft.com/">Allianze Infosoft</a></strong>
+  
+            <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="300">
+              <h4>Our Social Networks</h4>
+              <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
             </div>
-         </div>
-      </footer>
+  
+          </div>
+        </div>
+      </div>
+  
+      <div class="container py-4">
+        <div class="copyright">
+          &copy; Copyright <strong><span>HashEngines</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+  
+          Designed by <strong><a href="https://allianzeinfosoft.com/">Allianze Infosoft</strong></a>
+        </div>
+      </div>
+    </footer>
       <!-- End Footer -->
       <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
       <!-- Vendor JS Files -->
@@ -764,13 +732,7 @@
       <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
       <!-- Template Main JS File -->
       <script src="{% static 'assets/js/main.js' %}"></script>
-      <script>
-         function showSubMenu(){
-            document.getElementsByClassName('.dropdown-content')
-         }
-         $('button').click(function(){
-            $('.dropdown-content').hide().slideDown();
-         })
-      </script>
+      <script src="{% static 'assets/js/header.js' %}"></script>
+      
    </body>
 </html>

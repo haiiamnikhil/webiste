@@ -18,7 +18,7 @@ def Digital_Marking(request):
 
 def GraphicsDesignAndMultimedia(request):
     return render(
-        request,'graphicsdesignandmultimedia.html',
+        request,'services/graphicsdesignandmultimedia.html',
         {
             'metas':GraphicsDesign.objects.all()
         })
