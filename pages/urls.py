@@ -12,6 +12,6 @@ urlpatterns = [
     path('social-media-optimization',SocialMediaOptimization,name='smo'),
     path('email-marketing',EmailMarketing,name='emailmarketing'),
     path('content-marketing',ContentMarketing,name='contentmarketing'),
-    path('pay-per-click-marketing',Mobile_App,name='ppcm'),
+    path('pay-per-click-marketing',PayPerClickMarketing,name='ppcm'),
     path('branding',BrandMarketing,name='branding'),
 ]

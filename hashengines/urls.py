@@ -23,6 +23,7 @@ urlpatterns = [
     path('',include('home.urls')),
     path('blog/',include('blogs.urls')),
     path('services/',include('pages.urls')),
+    # path('hello/',include('socialapi.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

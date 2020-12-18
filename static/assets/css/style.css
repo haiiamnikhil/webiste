@@ -532,16 +532,29 @@ section {
   padding-bottom: 40px;
 }
 
-.section-title h2 {
-  font-size: 14px;
+.section-title .bannertext{
+  margin: 0;
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
   font-weight: 500;
-  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: #666666;
+  position: relative;
+  top: 0vh;
+}
+
+.section-title h2 {
+  font-size: 30px;
+  font-weight: 500;
+  padding: 30px;
   line-height: 1px;
   margin: 0 0 5px 0;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #aaaaaa;
   font-family: "Poppins", sans-serif;
+  text-align: center;
 }
 
 .section-title h2::after {
@@ -550,7 +563,16 @@ section {
   height: 1px;
   display: inline-block;
   background: #fd9042;
-  margin: 4px 10px;
+  margin: 10px 10px;
+}
+
+.section-title h2::before {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: #fd9042;
+  margin: 10px 10px;
 }
 
 .section-title p {
@@ -558,7 +580,7 @@ section {
   margin: 0;
   font-size: 36px;
   font-weight: 700;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-family: "Poppins", sans-serif;
   color: #2a2c39;
 }
@@ -820,6 +842,65 @@ section {
   margin-left: 40px;
   line-height: 24px;
   margin-bottom: 0;
+}
+
+.services .mettaclass{
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+@media screen and (max-width:852px){
+  #bannerimage .text-transparent-black{
+    font-size: 70px;
+    opacity: 10%;
+    top:15vh;
+    position: relative;
+    transition: 2s ease-in-out;
+    display: flex;
+    justify-content: center;
+  }
+  #bannerimage{
+    height: 10em;
+    width: auto;
+  }
+}
+@media screen and (max-width:915px){
+  .section-title h2::before{
+    display: none;
+  }
+  .section-title h2::after{
+    display: none;
+  }
+}
+
+@media screen and (max-width:690px){
+  .section-title .text-transparent-white{
+    font-size: 50px;
+    opacity: 100%;
+    position: relative;
+  }
+  
+  .services .mettaclass{
+    font-size: 15px;
+    font-weight: 500;
+    text-align: justify;
+  }
+
+  .section-title h2{
+    font-size: 27px;
+    margin-top: 20px;
+    padding: 0px;
+    line-height: -1px;
+    line-height: normal;
+
+  }
+
+  .section-title .text-transparent-black{
+    font-size: 50px;
+    opacity: 100%;
+    position: relative;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1634,7 +1715,7 @@ section {
 
 #footer .footer-top {
   padding: 60px 0 30px 0;
-  background: #2a2c39;
+  background: #1f1f1f;
 }
 
 #footer .footer-top .footer-contact {
@@ -1922,7 +2003,10 @@ section {
 }
 
 .card{
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+  background-color:transparent;
+  background-clip:none;
+  border: none;
 }
 
 .post a {
@@ -2062,13 +2146,13 @@ main.posts-listing .post-footer {
 }
 
 section#features {
-  background-color: #2a2c39;
+  background-color: #1f1f1f;
   color: white;
   box-shadow: 0px 0px 20px 0px #4c4c4c;
 }
 
 section#pricing {
-  background-color: #2a2c39;
+  background-color: #1f1f1f;
   color: white;
   box-shadow: 0px 0px 20px 0px #4c4c4c;
 }
@@ -2686,10 +2770,69 @@ section#pricing {
 .section-bg {
   padding: 120px 0;
   color: #fff;
-  background-color: #14151c;
+  background-color:#1f1f1f;
 }
 
+/* /////////////////////////////////////////////////// */
+/* Banner */
+/* Services */
+.services .icon-box {
+  margin-bottom: 20px;
+  padding: 30px;
+  border-radius: 6px;
+  background: #252525;
+  transition: 0.3s;
+}
 
+.services .icon-box:hover {
+  background: #2b2b2b;
+}
+
+.services .icon-box i {
+  float: left;
+  color: #e03a3c;
+  font-size: 40px;
+}
+
+.services .icon-box h2 a:hover:before {
+  content:'';
+  position:absolute;
+  width:100%;
+  transform:scaleX(0);
+  height:2px;
+  bottom:0;
+  left:0;
+  background-color:#fff;
+  transform-origin:bottom right;
+  transition:transform 0.4s cubic-bezier(0.86,0,0.07,1);
+}
+
+.services .icon-box h2 {
+  margin-left: 70px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.services .icon-box h2 a {
+  color: #fff;
+  transition: 0.3s;
+}
+
+.services .icon-box h2 a:hover {
+  /* text-decoration: underline; */
+  color: #e03a3c;
+}
+
+.services .icon-box .icon-box:hover h4 a {
+  color: #e03a3c;
+}
+
+.services .icon-box p {
+  margin-left: 70px;
+  line-height: 24px;
+  font-size: 14px;
+}
 
 /*--------------------------------------------------------------
 # Counts
@@ -2814,4 +2957,190 @@ section#pricing {
 
 .details .content p:last-child {
   margin-bottom: 0;
+}
+
+/* ExtraStyle */
+
+.text-transparent-black {
+    -webkit-text-fill-color: black;
+    -webkit-background-clip: text;
+    display: block;
+    font-size: 200px;
+    font-family: arial;
+    text-align: center;
+    width: 100%;
+    margin-top: -20px;
+    font-weight: bold;
+    /* letter-spacing: 25px; */
+    background-size: cover;
+    opacity: 25%;
+    position: relative;
+    text-shadow: 0px 20px 20px #4c4c4c;
+}
+
+.text-transparent-white {
+    -webkit-text-fill-color: white;
+    -webkit-background-clip: text;
+    display: block;
+    font-size: 150px;
+    font-family: arial;
+    text-align: center;
+    width: 100%;
+    margin-top: -20px;
+    font-weight: bold;
+    /* letter-spacing: 25px; */
+    background-size: cover;
+    opacity: 25%;
+    transition: 1s ease-in-out;
+    position: absolute;
+    
+    /* text-shadow: 0px 20px 20px #e6e6e6; */
+}
+
+
+.text-bold{
+  font-weight: bold;
+}
+
+/* //////////////////////////////////////////// */
+/* ServicePageServices */
+.servicemainpage .icon-box {
+  text-align: center;
+  padding: 70px 20px 80px 20px;
+  transition: all ease-in-out 0.3s;
+  background: #fff;
+  box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
+}
+
+.servicemainpage .icon-box .icon {
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease-in-out 0.3s;
+  position: relative;
+}
+
+.servicemainpage .mettaclass{
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.servicemainpage .icon-box .icon i {
+  font-size: 36px;
+  transition: 0.5s;
+  position: relative;
+}
+
+.servicemainpage .icon-box .icon svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.servicemainpage .icon-box .icon svg path {
+  transition: 0.5s;
+  fill: #f5f5f5;
+}
+
+.servicemainpage .icon-box h4 {
+  font-weight: 600;
+  margin: 10px 0 15px 0;
+  font-size: 22px;
+}
+
+.servicemainpage .icon-box h4 a {
+  color: #124265;
+  transition: ease-in-out 0.3s;
+}
+
+.servicemainpage .icon-box p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.servicemainpage .icon-box:hover {
+  border-color: #fff;
+  box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
+}
+
+.servicemainpage .iconbox-blue i {
+  color: #47aeff;
+}
+
+.servicemainpage .iconbox-blue:hover .icon i {
+  color: #fff;
+}
+
+.servicemainpage .iconbox-blue:hover .icon path {
+  fill: #47aeff;
+}
+
+.servicemainpage .iconbox-orange i {
+  color: #ffa76e;
+}
+
+.servicemainpage .iconbox-orange:hover .icon i {
+  color: #fff;
+}
+
+.servicemainpage .iconbox-orange:hover .icon path {
+  fill: #ffa76e;
+}
+
+.servicemainpage .iconbox-pink i {
+  color: #e80368;
+}
+
+.servicemainpage .iconbox-pink:hover .icon i {
+  color: #fff;
+}
+
+.servicemainpage .iconbox-pink:hover .icon path {
+  fill: #e80368;
+}
+
+.servicemainpage .iconbox-yellow i {
+  color: #ffbb2c;
+}
+
+.servicemainpage .iconbox-yellow:hover .icon i {
+  color: #fff;
+}
+
+.servicemainpage .iconbox-yellow:hover .icon path {
+  fill: #ffbb2c;
+}
+
+.servicemainpage .iconbox-red i {
+  color: #ff5828;
+}
+
+.servicemainpage .iconbox-red:hover .icon i {
+  color: #fff;
+}
+
+.servicemainpage .iconbox-red:hover .icon path {
+  fill: #ff5828;
+}
+
+.servicemainpage .iconbox-teal i {
+  color: #11dbcf;
+}
+
+.servicemainpage .iconbox-teal:hover .icon i {
+  color: #fff;
+}
+
+.servicemainpage .iconbox-teal:hover .icon path {
+  fill: #11dbcf;
+}
+
+@media screen and (max-width: 852px){
+  .servicemainpage .mettaclass{
+    text-align: center;
+  }
 }

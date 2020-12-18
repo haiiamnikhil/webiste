@@ -25,14 +25,14 @@ def GraphicsDesignAndMultimedia(request):
 
 def DesignAnd_Development(request):
     return render(
-        request,'designanddevelopment.html',
+        request,'services/designanddevelopment.html',
         {
             'metas':DesignAndDevelopment.objects.all()
         })
 
 def WebsiteDesignand_Development(request):
     return render(
-        request,'services/websitedesignanddevelopment.html',
+        request,'services/webdesignanddevelopment.html',
         {
             'metas':WebsiteDesignandDevelopment.objects.all()
         })

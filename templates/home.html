@@ -1,114 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta content="width=device-width, initial-scale=1.0" name="viewport">
-      {% for meta in metas %}
-      <title>{{meta.metatitle}}</title>
-      <meta content="{{meta.metadescription}}" name="descriptison">
-      <meta content="{{meta.metakeywords}}" name="keywords">
-      {% endfor %}
-      <!-- Favicons -->
-      {% load static %}
-      <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
-      <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
-      <!-- Google Fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-      <!-- Vendor CSS Files -->
-      <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-      <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
-      <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-      <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
-      <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
-      <link href="{% static 'assets/vendor/line-awesome/css/line-awesome.min.css' %}" rel="stylesheet">
-      <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
-      <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
-      <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
-      <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
-      <link href="{% static 'assets/css/socialbutton.css' %}" rel="stylesheet">
-      <link href="{% static 'assets/css/header.css' %}" rel="stylesheet">
-      <link rel="stylesheet" href="{% static 'assets/css/video.css' %}">
-      <link href='https://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>   
-      <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-   </head>
-   <body>
-      <!-- ======= Header ======= -->
-      <header>
-         <nav class="navbar container widthadjust">
-            <span class="navbar-toggle" id="js-navbar-toggle" onclick="openNav()">
-                <i class="fa fa-bars"></i>
-            </span>
-            <div class="logo mr-auto">
-               <h1 class="text-light"><a href="{% url 'home' %}"><img src="{% static 'assets/sitelogo/hashengines.png' %}" alt="hashengineslogo" style='width: 85%;'></a></h1>
-            </div>
-            <div class='desktop-nav' id="desktop">
-               <ul class="main-nav" id="js-menu">
-                   <li>
-                       <a href="{% url 'home' %}" class="nav-links">Home</a>
-                   </li>
-                   <li>
-                       <a href="{% url 'aboutus' %}" class="nav-links">About</a>
-                   </li>
-                   <li>
-                     <a href="{% url 'service'%}" id="dropdown" class="nav-links dropdown-toggle">Services<span class="caret"></span></a>
-                     <ul class="dropdown-menu">
-                        <li">
-                          <a href="{% url 'digital_marketing' %}" class="nav-links dropdown-toggle"><span class="caret"></span>Digital Marketing</a>
-                          <ul class="dropdown-menu">
-                            <li><a href="{% url 'seo'%}" class="nav-links">Search Engine Optimization</a></li>
-                            <li><a href="{% url 'smo'%}" class="nav-links">Social Media Optimization</a></li>
-                            <li><a href="{% url 'emailmarketing'%}"class="nav-links">Email Marketing</a></li>
-                            <li><a href="{% url 'contentmarketing'%}" class="nav-links">Content Marketing</a></li>
-                            <li><a href="{% url 'ppcm'%}" class="nav-links">Pay Per Click Management</a></li>
-                            <li><a href="{% url 'branding'%}" class="nav-links">Branding</a></li>
-                          </ul>
-                       </li>
-                        <li><a href="{% url 'graphics_design'%}" class="nav-links">Graphics Design and Multimedia</a></li>
-                        <li class="drop-down">
-                         <a href="{% url 'designanddevelopment'%}" class="nav-links">Design and Development</a>
-                         <ul class="dropdown-menu">
-                           <li><a href="{% url 'website_design_development'%}" class="nav-links">Website Design and Development</a></li>
-                           <li><a href="{% url 'mobile_app' %}" class="nav-links">Mobile Development</a></li>
-                         </ul>
+
+<head>
+   <meta charset="utf-8">
+   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   {% for meta in metas %}
+   <title>{{meta.metatitle}}</title>
+   <meta content="{{meta.metadescription}}" name="descriptison">
+   <meta content="{{meta.metakeywords}}" name="keywords">
+   {% endfor %}
+   <!-- Favicons -->
+   {% load static %}
+   <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+   <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+   <!-- Google Fonts -->
+   <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet">
+   <!-- Vendor CSS Files -->
+   <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+   <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+   <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+   <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+   <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+   <link href="{% static 'assets/vendor/line-awesome/css/line-awesome.min.css' %}" rel="stylesheet">
+   <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+   <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+   <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+   <link href="{% static 'assets/css/socialbutton.css' %}" rel="stylesheet">
+   <link href="{% static 'assets/css/header.css' %}" rel="stylesheet">
+   <link rel="stylesheet" href="{% static 'assets/css/video.css' %}">
+   <link href='https://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+   <!-- ======= Header ======= -->
+   <header class="fixed-top">
+      <div class="container widthadjust">
+         <nav>
+            <div class="logo" tabindex="1"><a href="{% url 'home' %}"><img width=90% style="margin-bottom: 10px;"
+                     src="{% static 'assets/sitelogo/hashengines.png' %}" alt=""></a></div>
+            <div class="nav-wrap">
+               <div class="nav-button">
+                  <a id="nav-toggle" href="#!" class="">
+                     <span class="before"></span>
+                  </a>
+               </div>
+               <ul class="top_nav">
+                  <li>
+                     <a href="{% url 'home' %}">Home</a>
+                  </li>
+                  <li>
+                     <a href="{% url 'aboutus' %}">About</a>
+                  </li>
+                  <li>
+                     <a href="{% url 'service'%}">Services</a>
+                     <ul class="sub-nav">
+                        <li>
+                           <a href="{% url 'digital_marketing' %}">Digital Marketing</a>
+                           <ul class="sub-nav">
+                              <li><a href="{% url 'seo'%}">Search Engine Optimization</a></li>
+                              <li><a href="{% url 'smo'%}">Social Media Optimization</a></li>
+                              <li><a href="{% url 'emailmarketing'%}">Email Marketing</a></li>
+                              <li><a href="{% url 'contentmarketing'%}">Content Marketing</a></li>
+                              <li><a href="{% url 'ppcm'%}">Pay Per Click Management</a></li>
+                              <li><a href="{% url 'branding'%}">Branding</a></li>
+                           </ul>
+                        </li>
+                        <li><a href="{% url 'graphics_design'%}">Graphics Design and Multimedia</a></li>
+                        <li>
+                           <a href="{% url 'designanddevelopment'%}">Design and Development</a>
+                           <ul class="sub-nav">
+                              <li><a href="{% url 'website_design_development'%}">Website Design and Development</a></li>
+                              <li><a href="{% url 'mobile_app' %}">Mobile App Development</a></li>
+                           </ul>
                         </li>
                      </ul>
                   </li>
-                   <li>
-                       <a href="{% url 'ourpackage' %}" class="nav-links">Our Packages</a>
-                   </li>
-                   <li>
-                       <a href="{% url 'blogs' %}" class="nav-links">Blog</a>
-                   </li>
-                   <li>
-                     <a href="{% url 'contact'%}" class="nav-links">Contact</a>
-                 </li>
+                  <li><a href="{% url 'ourpackage' %}">Our Packages</a></li>
+                  <li><a href="{% url 'blogs' %}">Blog</a></li>
+                  <li><a href="{% url 'contact'%}">Contact</a></li>
                </ul>
             </div>
-            <div id="mobile-nav" class="sidenav">
-               <a href="#">About</a>
-               <a href="#">Services</a>
-               <a href="#">Clients</a>
-               <a href="#">Contact</a>
-             </div>
-        
-        </nav>
-      </header>
-   
-      <ul class="menu bottomLeft">
-         <li class="share top">
-           <i class="fa fa-share-alt"></i>
-           <ul class="submenu">
-             <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-             <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-             <li><a href="#" class="googlePlus"><i class="fa fa-google-plus"></i></a></li>
-             <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
-           </ul>
-         </li>
-       </ul>
-      <!-- End Header -->
-      <!-- ======= Hero Section ======= -->
-      <div class="body-content">
-         {% block content %}
+         </nav>
+      </div>
+   </header>
+   <ul class="menu bottomLeft">
+      <li class="share top">
+         <i class="fa fa-share-alt"></i>
+         <ul class="submenu">
+            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" class="googlePlus"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+         </ul>
+      </li>
+   </ul>
+   <!-- End Header -->
+   <!-- ======= Hero Section ======= -->
+   <div class="body-content">
+      {% block content %}
       <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
          <div class='play-video'>
             <div class="overlay"></div>
@@ -116,8 +111,8 @@
                <source src="{% static 'assets/video/hashengines.mp4'%}" type="video/mp4">
             </video>
          </div>
-         
-         <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+         <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28 " preserveAspectRatio="none">
             <defs>
                <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
             </defs>
@@ -131,8 +126,8 @@
                <use xlink:href="#wave-path" x="50" y="9" fill="#D68910">
             </g>
             <g class="wave4">
-              <use xlink:href="#wave-path" x="50" y="9" fill="#3498DB">
-           </g>
+               <use xlink:href="#wave-path" x="50" y="9" fill="#3498DB">
+            </g>
          </svg>
          <!-- Slide 1 -->
       </section>
@@ -141,23 +136,22 @@
          <div class="container">
             <div class="row" data-aos="zoom-out">
                <div class="col-lg-9 text-center text-lg-left">
-                 
-                 <form>
-                   <div class="form-row">
-                     <div class="form-group col-md-6">
-                        <input type="text" class="form-control" placeholder="Name">
+                  <form>
+                     <div class="form-row">
+                        <div class="form-group col-md-6">
+                           <input type="text" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                           <input type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group col-md-6">
+                           <input type="text" class="form-control" placeholder="Website">
+                        </div>
+                        <div class="form-group col-md-6">
+                           <input type="message" class="form-control" placeholder="Message">
+                        </div>
                      </div>
-                     <div class="form-group col-md-6">
-                       <input type="email" class="form-control" placeholder="Email">
-                     </div>
-                     <div class="form-group col-md-6">
-                      <input type="text" class="form-control" placeholder="Website">
-                    </div>
-                    <div class="form-group col-md-6">
-                      <input type="message" class="form-control" placeholder="Message">
-                    </div>
-                   </div>
-                 </form>
+                  </form>
                </div>
                <div class="col-lg-3 cta-btn-container text-center">
                   <a class="cta-btn align-middle" href="#">Call To Action</a>
@@ -171,25 +165,32 @@
          <section id="about" class="about">
             <div class="container">
                <div class="section-title" data-aos="zoom-out">
+                  <h1 class="text-transparent-black">About</h1>
                   <h2>About</h2>
                   <p>A Goal-Driven Digital Marketing Company</p>
                </div>
                <div class="row content" data-aos="fade-up">
                   <div class="col-lg-6">
                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore
                         magna aliqua.
                      </p>
                      <ul>
-                        <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-                        <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-                        <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+                        <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat
+                        </li>
+                        <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate
+                           velit</li>
+                        <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat
+                        </li>
                      </ul>
                   </div>
                   <div class="col-lg-6 pt-4 pt-lg-0">
                      <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate
+                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in
                         culpa qui officia deserunt mollit anim id est laborum.
                      </p>
                      <a href="{% url 'aboutus' %}" class="btn-learn-more">Learn More</a>
@@ -244,9 +245,11 @@
                      <div class="row">
                         <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                            <h3>Search Engine Optimization</h3>
-                        
                            <p>
-                              Our professional digital marketing experts focus not just on bringing huge website traffic but also on gathering the business-appropriate web traffic. The implemented SEO tactics aim at capturing meaningful contacts and helps your business stand out amid the global competition.
+                              Our professional digital marketing experts focus not just on bringing huge website traffic
+                              but also on gathering the business-appropriate web traffic. The implemented SEO tactics
+                              aim at capturing meaningful contacts and helps your business stand out amid the global
+                              competition.
                            </p>
                            <p>
                               Our SEO practices focus both on the effectively designed on-page and off-page strategies.
@@ -262,19 +265,27 @@
                         <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                            <h3>Neque exercitationem debitis soluta quos debitis quo mollitia officia est</h3>
                            <p>
-                              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                              reprehenderit in voluptate
+                              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                              proident, sunt in
                               culpa qui officia deserunt mollit anim id est laborum
                            </p>
                            <p class="font-italic">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                              ut labore et dolore
                               magna aliqua.
                            </p>
                            <ul>
-                              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                              <li><i class="ri-check-double-line"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
-                              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
+                                 consequat.</li>
+                              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in
+                                 voluptate velit.</li>
+                              <li><i class="ri-check-double-line"></i> Provident mollitia neque rerum asperiores dolores
+                                 quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
+                              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
+                                 consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda
+                                 mastiro dolore eu fugiat nulla pariatur.</li>
                            </ul>
                         </div>
                         <div class="col-lg-6 order-1 order-lg-2 text-center">
@@ -287,17 +298,23 @@
                         <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                            <h3>Voluptatibus commodi ut accusamus ea repudiandae ut autem dolor ut assumenda</h3>
                            <p>
-                              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                              reprehenderit in voluptate
+                              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                              proident, sunt in
                               culpa qui officia deserunt mollit anim id est laborum
                            </p>
                            <ul>
-                              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                              <li><i class="ri-check-double-line"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
+                              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
+                                 consequat.</li>
+                              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in
+                                 voluptate velit.</li>
+                              <li><i class="ri-check-double-line"></i> Provident mollitia neque rerum asperiores dolores
+                                 quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
                            </ul>
                            <p class="font-italic">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                              ut labore et dolore
                               magna aliqua.
                            </p>
                         </div>
@@ -311,18 +328,25 @@
                         <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                            <h3>Omnis fugiat ea explicabo sunt dolorum asperiores sequi inventore rerum</h3>
                            <p>
-                              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                              reprehenderit in voluptate
+                              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                              proident, sunt in
                               culpa qui officia deserunt mollit anim id est laborum
                            </p>
                            <p class="font-italic">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                              ut labore et dolore
                               magna aliqua.
                            </p>
                            <ul>
-                              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
+                                 consequat.</li>
+                              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in
+                                 voluptate velit.</li>
+                              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
+                                 consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda
+                                 mastiro dolore eu fugiat nulla pariatur.</li>
                            </ul>
                         </div>
                         <div class="col-lg-6 order-1 order-lg-2 text-center">
@@ -347,148 +371,57 @@
                      <div class="icon-box" data-aos="zoom-in-left">
                         <div class="icon"><i class="las la-basketball-ball" style="color: #ff689b;"></i></div>
                         <h4 class="title"><a href="">Digital Marketing</a></h4>
-                        <p class="description">From small firms to large organizations, our digital marketing specialists will enable you to accomplish success with the accurate target audience tracking capabilities.</p>
+                        <p class="description">From small firms to large organizations, our digital marketing
+                           specialists will enable you to accomplish success with the accurate target audience tracking
+                           capabilities.</p>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
                      <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="100">
                         <div class="icon"><i class="las la-book" style="color: #e9bf06;"></i></div>
                         <h4 class="title"><a href="">Graphics Design and Multimedia</a></h4>
-                        <p class="description">Hash Engines’s professional and cost-saving graphic design and multimedia solutions makes your business product standout with a competitive edge in the global and online scenario.</p>
+                        <p class="description">Hash Engines’s professional and cost-saving graphic design and multimedia
+                           solutions makes your business product standout with a competitive edge in the global and
+                           online scenario.</p>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 mt-5 mt-lg-0 ">
                      <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="200">
                         <div class="icon"><i class="las la-file-alt" style="color: #3fcdc7;"></i></div>
                         <h4 class="title"><a href="">Web Development</a></h4>
-                        <p class="description">From the very start, we perform a strategic analysis not only to understand the entire client requirements, but that the end product will resolve prior issues faced by clients, exactly meeting their expectations</p>
+                        <p class="description">From the very start, we perform a strategic analysis not only to
+                           understand the entire client requirements, but that the end product will resolve prior issues
+                           faced by clients, exactly meeting their expectations</p>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 mt-5">
                      <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="300">
                         <div class="icon"><i class="las la-tachometer-alt" style="color:#41cf2e;"></i></div>
                         <h4 class="title"><a href="">Mobile App Development</a></h4>
-                        <p class="description">Mobiles – A friendly device that has made a profound and perpetual place in our pockets and the emerging multiple apps serve a majority of our potential purposes.</p>
+                        <p class="description">Mobiles – A friendly device that has made a profound and perpetual place
+                           in our pockets and the emerging multiple apps serve a majority of our potential purposes.</p>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 mt-5">
                      <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="400">
                         <div class="icon"><i class="las la-globe-americas" style="color: #d6ff22;"></i></div>
                         <h4 class="title"><a href="">Nemo Enim</a></h4>
-                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                           praesentium voluptatum deleniti atque</p>
                      </div>
                   </div>
                   <div class="col-lg-4 col-md-6 mt-5">
                      <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="500">
                         <div class="icon"><i class="las la-clock" style="color: #4680ff;"></i></div>
                         <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-                        <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+                        <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+                           tempore, cum soluta nobis est eligendi</p>
                      </div>
                   </div>
                </div>
             </div>
          </section>
          <!-- End Services Section -->
-         <!-- ======= Portfolio Section ======= -->
-         <!-- <section id="portfolio" class="portfolio">
-            <div class="container">
-               <div class="section-title" data-aos="zoom-out">
-                  <h2>Portfolio</h2>
-                  <p>What we've done</p>
-               </div>
-               <ul id="portfolio-flters" class="d-flex justify-content-end" data-aos="fade-up">
-                  <li data-filter="*" class="filter-active">All</li>
-                  <li data-filter=".filter-app">App</li>
-                  <li data-filter=".filter-card">Card</li>
-                  <li data-filter=".filter-web">Web</li>
-               </ul>
-               <div class="row portfolio-container" data-aos="fade-up">
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                     <div class="portfolio-img"><img src="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt=""></div>
-                     <div class="portfolio-info">
-                        <h4>App 1</h4>
-                        <p>App</p>
-                        <a href="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                     <div class="portfolio-img"><img src="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt=""></div>
-                     <div class="portfolio-info">
-                        <h4>Web 3</h4>
-                        <p>Web</p>
-                        <a href="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                     <div class="portfolio-img"><img src="{% static 'assets/img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt=""></div>
-                     <div class="portfolio-info">
-                        <h4>App 2</h4>
-                        <p>App</p>
-                        <a href="{% static 'assets/img/portfolio/portfolio-3.jpg' %}" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                     <div class="portfolio-img"><img src="{% static 'assets/img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt=""></div>
-                     <div class="portfolio-info">
-                        <h4>Card 2</h4>
-                        <p>Card</p>
-                        <a href="{% static 'assets/img/portfolio/portfolio-4.jpg' %}" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                     <div class="portfolio-img"><img src="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" class="img-fluid" alt=""></div>
-                     <div class="portfolio-info">
-                        <h4>Web 2</h4>
-                        <p>Web</p>
-                        <a href="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" data-gall="portfolioGallery" class="venobox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                     <div class="portfolio-img"><img src="{% static 'assets/img/portfolio/portfolio-6.jpg' %}" class="img-fluid" alt=""></div>
-                     <div class="portfolio-info">
-                        <h4>App 3</h4>
-                        <p>App</p>
-                        <a href="{% static 'assets/img/portfolio/portfolio-6.jpg' %}" data-gall="portfolioGallery" class="venobox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                     <div class="portfolio-img"><img src="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" class="img-fluid" alt=""></div>
-                     <div class="portfolio-info">
-                        <h4>Card 1</h4>
-                        <p>Card</p>
-                        <a href="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" data-gall="portfolioGallery" class="venobox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                     <div class="portfolio-img"><img src="{% static 'assets/img/portfolio/portfolio-8.jpg' %}" class="img-fluid" alt=""></div>
-                     <div class="portfolio-info">
-                        <h4>Card 3</h4>
-                        <p>Card</p>
-                        <a href="{% static 'assets/img/portfolio/portfolio-8.jpg' %}" data-gall="portfolioGallery" class="venobox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                     <div class="portfolio-img"><img src="{% static 'assets/img/portfolio/portfolio-9.jpg' %}" class="img-fluid" alt=""></div>
-                     <div class="portfolio-info">
-                        <h4>Web 3</h4>
-                        <p>Web</p>
-                        <a href="{% static 'assets/img/portfolio/portfolio-9.jpg' %}" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section> -->
-         <!-- End Portfolio Section -->
-         <!-- ======= Testimonials Section ======= -->
          <section id="testimonials" class="testimonials">
             <div class="container">
                <div class="section-title" data-aos="zoom-out">
@@ -499,50 +432,62 @@
                   <div class="testimonial-item">
                      <p>
                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                        Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                        Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus.
+                        Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                      </p>
-                     <img src="{% static 'assets/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
+                     <img src="{% static 'assets/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img"
+                        alt="">
                      <h3>Saul Goodman</h3>
                      <h4>Ceo &amp; Founder</h4>
                   </div>
                   <div class="testimonial-item">
                      <p>
                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                        Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                        Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram
+                        malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                      </p>
-                     <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
+                     <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img"
+                        alt="">
                      <h3>Sara Wilsson</h3>
                      <h4>Designer</h4>
                   </div>
                   <div class="testimonial-item">
                      <p>
                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                        Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                        Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis
+                        minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                      </p>
-                     <img src="{% static 'assets/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
+                     <img src="{% static 'assets/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img"
+                        alt="">
                      <h3>Jena Karlis</h3>
                      <h4>Store Owner</h4>
                   </div>
                   <div class="testimonial-item">
                      <p>
                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                        Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                        Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim
+                        velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum
+                        veniam.
                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                      </p>
-                     <img src="{% static 'assets/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
+                     <img src="{% static 'assets/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img"
+                        alt="">
                      <h3>Matt Brandon</h3>
                      <h4>Freelancer</h4>
                   </div>
                   <div class="testimonial-item">
                      <p>
                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                        Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                        Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim
+                        culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum
+                        quid.
                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                      </p>
-                     <img src="{% static 'assets/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
+                     <img src="{% static 'assets/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img"
+                        alt="">
                      <h3>John Larson</h3>
                      <h4>Entrepreneur</h4>
                   </div>
@@ -553,186 +498,171 @@
          <!-- ======= Pricing Section ======= -->
          <section id="pricing" class="pricing section-bg">
             <div class="container" data-aos="fade-up">
-      
-              <div class="section-title">
-                <h2>Pricing</h2>
-                <p class="coloradjust">Here are some of Our Packages</p>
-              </div>
-      
-              <div class="row">
-      
-                <div class="col-lg-4 col-md-6">
-                  <div class="box" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Free</h3>
-                    <h4><sup>$</sup>0<span> / month</span></h4>
-                    <ul>
-                      <li>Aida dere</li>
-                      <li>Nec feugiat nisl</li>
-                      <li>Nulla at volutpat dola</li>
-                      <li class="na">Pharetra massa</li>
-                      <li class="na">Massa ultricies mi</li>
-                    </ul>
-                    <div class="btn-wrap">
-                      <a href="#" class="btn-buy">Buy Now</a>
-                    </div>
+               <div class="section-title">
+                  <h2>Pricing</h2>
+                  <p class="coloradjust">Here are some of Our Packages</p>
+               </div>
+               <div class="row">
+                  <div class="col-lg-4 col-md-6">
+                     <div class="box" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Free</h3>
+                        <h4><sup>$</sup>0<span> / month</span></h4>
+                        <ul>
+                           <li>Aida dere</li>
+                           <li>Nec feugiat nisl</li>
+                           <li>Nulla at volutpat dola</li>
+                           <li class="na">Pharetra massa</li>
+                           <li class="na">Massa ultricies mi</li>
+                        </ul>
+                        <div class="btn-wrap">
+                           <a href="#" class="btn-buy">Buy Now</a>
+                        </div>
+                     </div>
                   </div>
-                </div>
-      
-                <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
-                  <div class="box featured" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Business</h3>
-                    <h4><sup>$</sup>19<span> / month</span></h4>
-                    <ul>
-                      <li>Aida dere</li>
-                      <li>Nec feugiat nisl</li>
-                      <li>Nulla at volutpat dola</li>
-                      <li>Pharetra massa</li>
-                      <li class="na">Massa ultricies mi</li>
-                    </ul>
-                    <div class="btn-wrap">
-                      <a href="#" class="btn-buy">Buy Now</a>
-                    </div>
+                  <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+                     <div class="box featured" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Business</h3>
+                        <h4><sup>$</sup>19<span> / month</span></h4>
+                        <ul>
+                           <li>Aida dere</li>
+                           <li>Nec feugiat nisl</li>
+                           <li>Nulla at volutpat dola</li>
+                           <li>Pharetra massa</li>
+                           <li class="na">Massa ultricies mi</li>
+                        </ul>
+                        <div class="btn-wrap">
+                           <a href="#" class="btn-buy">Buy Now</a>
+                        </div>
+                     </div>
                   </div>
-                </div>
-      
-                <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
-                  <div class="box" data-aos="fade-up" data-aos-delay="300">
-                    <h3>Developer</h3>
-                    <h4><sup>$</sup>29<span> / month</span></h4>
-                    <ul>
-                      <li>Aida dere</li>
-                      <li>Nec feugiat nisl</li>
-                      <li>Nulla at volutpat dola</li>
-                      <li>Pharetra massa</li>
-                      <li>Massa ultricies mi</li>
-                    </ul>
-                    <div class="btn-wrap">
-                      <a href="#" class="btn-buy">Buy Now</a>
-                    </div>
+                  <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+                     <div class="box" data-aos="fade-up" data-aos-delay="300">
+                        <h3>Developer</h3>
+                        <h4><sup>$</sup>29<span> / month</span></h4>
+                        <ul>
+                           <li>Aida dere</li>
+                           <li>Nec feugiat nisl</li>
+                           <li>Nulla at volutpat dola</li>
+                           <li>Pharetra massa</li>
+                           <li>Massa ultricies mi</li>
+                        </ul>
+                        <div class="btn-wrap">
+                           <a href="#" class="btn-buy">Buy Now</a>
+                        </div>
+                     </div>
                   </div>
-                </div>
-      
-              </div>
-      
+               </div>
             </div>
-          </section><!-- End Pricing Section -->
+         </section>
+         <!-- End Pricing Section -->
          <!-- End Pricing Section -->
          <!-- Blog -->
-         
       </main>
-   </div>   
-      {% endblock %}
-         <section id="blog" class="padd-section wow fadeInUp">
-   
-            <div class="container">
-              <div class="section-title" data-aos="zoom-out">
-        
-                <h2>Latest Blog</h2>
-                <p class="separator">Integer cursus bibendum augue ac cursus .</p>
-        
-              </div>
-            </div>
-        
-            <div class="container">
-              <div class="row">
-               {% for blogs in latestBlogs %}
-                <div class="col-md-6 col-lg-4">
-                  <div class="block-blog text-left">
-                    <a href="{% url 'BlogDetailPage' blogs.link %}"><img src="{{blogs.blogimage.url}}" alt="img" class="img-fluid home-image"></a>
-                    <div class="content-blog">
-                      <h6><a href="{% url 'BlogDetailPage' blogs.link %}">{{blogs.title}}</a></h6>
-                      <span><small>{{blogs.published}}</small></span>
-                      <a class="pull-right readmore" href="{% url 'BlogDetailPage' blogs.link %}">read more</a>
-                    </div>
+   </div>
+   {% endblock %}
+   <section id="blog" class="padd-section wow fadeInUp">
+      <div class="container">
+         <div class="section-title" data-aos="zoom-out">
+            <h2>Latest Blog</h2>
+            <p class="separator">Integer cursus bibendum augue ac cursus .</p>
+         </div>
+      </div>
+      <div class="container">
+         <div class="row">
+            {% for blogs in latestBlogs %}
+            <div class="col-md-6 col-lg-4">
+               <div class="block-blog text-left">
+                  <a href="{% url 'BlogDetailPage' blogs.link %}"><img src="{{blogs.blogimage.url}}" alt="img"
+                        class="img-fluid home-image"></a>
+                  <div class="content-blog">
+                     <h6><a href="{% url 'BlogDetailPage' blogs.link %}">{{blogs.title}}</a></h6>
+                     <span><small>{{blogs.published}}</small></span>
+                     <a class="pull-right readmore" href="{% url 'BlogDetailPage' blogs.link %}">read more</a>
                   </div>
-                </div>
-                {% endfor %}
-        
-   
-              </div>
+               </div>
             </div>
-          </section>
-   
+            {% endfor %}
+         </div>
+      </div>
+   </section>
    <footer id="footer">
-
-  
       <div class="footer-top">
-        <div class="container">
-          <div class="row">
-  
-            <div class="col-lg-3 col-md-6 footer-contact" data-aos="fade-up">
-              <h3>Appland</h3>
-              <p>
-                A108 Adam Street <br>
-                New York, NY 535022<br>
-                United States <br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
-              </p>
+         <div class="container widthadjust">
+            <div class="row">
+               <div class="col-lg-3 col-md-6 footer-contact" data-aos="fade-up">
+                  <h3><a href="{% url 'home' %}"><img width=50% style="margin-bottom: 10px;"
+                     src="{% static 'assets/sitelogo/hashengines.png' %}" alt=""></a></h3>
+                  <p>
+                     A108 Adam Street <br>
+                     New York, NY 535022<br>
+                     United States <br><br>
+                     <strong>Phone:</strong> +1 5589 55488 55<br>
+                     <strong>Email:</strong> info@example.com<br>
+                  </p>
+               </div>
+               <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="100">
+                  <h4>Useful Links</h4>
+                  <ul>
+                     <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                     <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                     <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                     <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                     <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
+                  <h4>Our Services</h4>
+                  <ul>
+                     <li><i class="bx bx-chevron-right"></i> <a href="#">Digital Marketing</a></li>
+                     <li><i class="bx bx-chevron-right"></i> <a href="#">Graphics Design and Multimedia</a></li>
+                     <li><i class="bx bx-chevron-right"></i> <a href="#">Design and Development</a></li>
+                     <li><i class="bx bx-chevron-right"></i> <a href="#">Website Design and Development</a></li>
+                     <li><i class="bx bx-chevron-right"></i> <a href="#">Mobile App Development</a></li>
+                     <li><i class="bx bx-chevron-right"></i> <a href="#">SEO</a></li>
+                     <li><i class="bx bx-chevron-right"></i> <a href="#">SMO</a></li>
+                     <li><i class="bx bx-chevron-right"></i> <a href="#">Email Marketing</a></li>
+                     <li><i class="bx bx-chevron-right"></i> <a href="#">Content Marketing</a></li>
+                     <li><i class="bx bx-chevron-right"></i> <a href="#">Pay Per Click Marketing</a></li>
+                     <li><i class="bx bx-chevron-right"></i> <a href="#">Brand Marketing</a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="300">
+                  <h4>Our Social Networks</h4>
+                  <p>Get Connected with us at our Social Networks</p>
+                  <div class="social-links mt-3">
+                     <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                     <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                     <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                     <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                     <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                  </div>
+               </div>
             </div>
-  
-            <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="100">
-              <h4>Useful Links</h4>
-              <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-              </ul>
-            </div>
-  
-            <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
-              <h4>Our Services</h4>
-              <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-              </ul>
-            </div>
-  
-            <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="300">
-              <h4>Our Social Networks</h4>
-              <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              </div>
-            </div>
-  
-          </div>
-        </div>
+         </div>
       </div>
-  
       <div class="container py-4">
-        <div class="copyright">
-          &copy; Copyright <strong><span>HashEngines</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-  
-          Designed by <strong><a href="https://allianzeinfosoft.com/">Allianze Infosoft</strong></a>
-        </div>
+         <div class="copyright">
+            &copy; Copyright <strong><span>HashEngines</span></strong>. All Rights Reserved
+         </div>
+         <div class="credits">
+            Designed by <strong><a href="https://allianzeinfosoft.com/">Allianze Infosoft</strong></a>
+         </div>
       </div>
-    </footer>
-      <!-- End Footer -->
-      <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
-      <!-- Vendor JS Files -->
-      <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
-      <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-      <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
-      <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
-      <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-      <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
-      <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
-      <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
-      <!-- Template Main JS File -->
-      <script src="{% static 'assets/js/main.js' %}"></script>
-      <script src="{% static 'assets/js/header.js' %}"></script>
-      
-   </body>
+   </footer>
+   <!-- End Footer -->
+   <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+   <!-- Vendor JS Files -->
+   <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+   <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+   <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+   <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+   <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+   <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+   <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+   <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+   <!-- Template Main JS File -->
+   <script src="{% static 'assets/js/main.js' %}"></script>
+   <script src="{% static 'assets/js/header.js' %}"></script>
+</body>
+
 </html>
